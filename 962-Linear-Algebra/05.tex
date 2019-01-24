@@ -1,0 +1,320 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{multirow}
+\usepackage{rotating}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+%\pagestyle{empty}
+%\usepackage[bottom=0.5in,headheight=0pt,headsep=0pt]{geometry}
+%\addtolength{\topmargin}{0pt}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\im}{Im}
+\usepackage{xepersian}
+\linespread{1.2}
+\settextfont{XB Niloofar}
+\setdigitfont{XB Niloofar}
+
+\begin{document}
+\begin{center}
+	بسمه تعالی
+\end{center}
+
+\begin{center}
+	\textbf{
+		پاسخ سری پنجم تمرین‌ها
+		- درس جبرخطی ۱ - دانشگاه صنعتی شریف}
+	\\
+	علیرضا توفیقی محمدی - رشته علوم کامپیوتر - شماره‌ی دانشجویی: ۹۶۱۰۰۳۶۳
+\end{center}
+
+\section{تمرین 16 سری سوم}
+\subsection{
+$\rank A + \rank B - n \leq \rank AB$
+}
+برای اثبات 
+$\ker A$،
+$\ker B$ و
+$\ker AB$
+را در نظر بگیرید.
+ادعا می‌کنیم:
+$$
+\dim(\ker AB) \leq \dim(\ker A) + \dim(\ker B)
+$$
+زیرا 
+$$
+\ker AB = \ker B + \ker A|_{\im B}
+\implies
+$$$$
+\dim(\ker AB) = \dim(\ker B) + \dim(\ker A|_{\im B}) - 
+\dim(\ker A|_{\im B} \cap \ker B)
+$$$$= \dim(\ker B) + \dim(\ker A|_{\im B}) \leq
+\dim(\ker B) + \dim(\ker A)
+$$
+و چون 
+$\dim \ker T + \rank T = n$
+داریم:
+$$n-\rank AB \leq n-\rank A + n - \rank B
+\implies 
+\rank A + \rank B - n \leq \rank AB
+$$
+\subsection{$\rank AB \leq \min\{\rank A, \rank B\}$}
+اولا
+$$\rank AB = \rank A|_{\im B} \leq \rank A$$
+\\
+ثانیا 
+$$\ker B \subseteq \ker AB \implies
+\dim\ker B \leq \dim\ker AB \implies$$$$
+n-\rank B \leq n - \rank AB \implies
+\rank AB \leq \rank B$$
+پس
+$$\rank AB \leq \min\{\rank A, \rank B \}$$
+و حکم ثابت شد.
+
+\subsection{$\rank AB + \rank BC \leq \rank ABC + \rank B$}
+برای اثبات ابتدا ادعا می‌کنیم
+$$\im AB = \im A|_{\im B}$$
+که تقریبا واضح است، زیرا:
+$$ v \in \im AB \iff \exists u: AB(u) = v \iff A(B(u)) = v $$$$\iff w = B(u) \in \im B; A(w) = v \iff v \in \im A|_{\im B}$$
+
+همچنین می‌دانیم:
+$$
+\dim \im A|_{X} + \dim \ker A|_{X} = \dim X
+$$
+پس
+$$
+\rank A|_{\im B} + \dim \ker A|_{\im B} = \dim \im B = \rank B
+$$
+پس
+$$
+\rank AB + \dim \ker A|_{\im B} = \rank B \text{(1)\space\space\space\space\space}
+$$
+همچنین می‌دانیم:
+$$
+V \subseteq U \implies \dim \ker A|_V \leq \dim \ker A|_U
+$$
+و همچنین می‌دانیم 
+$\im BC \subseteq \im B$
+پس:
+$$
+\dim \ker A|_{\im BC} \leq \dim \ker A|_{\im B}
+$$
+حال از (۱) و نتیجه‌ی بالا استفاده می‌کنیم، داریم:
+$$
+\rank B = \rank AB + \dim \ker A|_{\im B} \geq 
+\rank AB + \dim \ker A|_{\im BC}$$
+پس
+$$\rank B - \dim \ker A|_{\im BC} \geq \rank AB$$
+حال 
+$\rank BC$
+را به دو طرف تساوی اضافه می‌کنیم:
+$$\rank B - \dim \ker A|_{\im BC} + \rank BC\geq \rank AB + \rank BC$$
+و طبق ادعای ابتدای این بخش (با قرار دهی $BC$ به حای $B$ در آن ادعا) داریم:
+$$\rank B + \rank ABC\geq \rank AB + \rank BC$$
+\subsection{$\rank(A + B) \leq \rank A + \rank B$}
+داریم:
+$$
+\im (A+B) \subseteq \im A + \im B
+$$
+پس
+$$
+\rank(A+B) \leq \dim(\im A + \im B) =
+\rank A + \rank B - \dim(\im A \cap \im B)
+$$
+$$
+\leq \rank A + \rank B
+$$
+یعنی
+$$
+\rank (A+B) \leq \rank A + \rank B
+$$
+
+\section{تمرین ۱ سری چهارم}
+پاسخ هر قسمت را با 
+$\{u_1, ..., u_n\}$
+نشان می‌دهیم.
+\subsection{
+$\{v_2, v_1, v_3, ..., v_n\}$
+}
+برای $i > 2$ مشخص است که 
+$u^{*}_i = v^{*}_i$.
+
+برای 
+$u_1$
+داریم:
+$u_1(v_2) = 1, u_1(v_i) = 0 (i \neq 2)$
+پس
+$u_1 = v^{*}_2$
+و به طریق مشابه 
+$u_2 = v^{*}_1$.
+
+\subsection{
+$\{rv_1, v_2, ..., v_n\}$
+}
+برای $i=1$ داریم:
+$u_1(rv_1) = ru_1(v_1) = 1, u_1(v_i) = 0 (i \neq 1)$
+پس 
+$$u_1(v_1) = r^{-1}, u_1(v_i) = 0 (i \neq 1)$$
+پس
+$u_1 = r^{-1}v^*_1$.
+
+همچنین برای $i > 1$ داریم:
+$$u_i(v_i) = 1, u_i(v_j) = 0 (j > 1, j \neq i), u_i(rv_1) = r u_i(v_1) = 0 \implies u_i(v_1) = 0$$
+پس $u_i = v^*_i$
+\subsection{
+$\{v_1 + r v_2, v_2, v_3, ..., v_n\}$
+}
+برای $i > 2$ داریم 
+$u_i = v^*_i$.
+کافی است قرار دهیم:
+$u_1 = v^*_1, u_2 = -rv^*_1 + v^*_2$
+
+در این صورت برای 
+$i > 2$
+داریم:
+$$u_1(v_i) = u_2(v_i) = 0$$
+
+و همچنین
+$$
+u_1(v_1+rv_2) = v^*_1(v_1 + rv_2) = v^*_1(v_1) + rv^*_1(v_2) = 1, u_1(v_2) = v^*_1(v_2) = 0
+$$
+$$
+u_1(v_1+rv_2) = (-rv^*_1 + v^*_2)(v_1 + rv_2) = (-rv^*_1 + v^*_2)(v_1) + r(-rv^*_1 + v^*_2)(v_2) = -r + r = 0$$
+$$(-rv^*_1 + v^*_2)(v_2) = -rv^*_1(v_1) + v^*_2(v_2) = 0 + 1 = 1
+$$
+پس شرایط را دارد.
+\subsection{
+$\{t_1 v_1 + t_2 v_2 + ... + t_n v_n, v_2, v_3, ..., v_n\}$
+}
+$u_1 = t_1^{-1}v^*_1$
+و برای $i>1$
+$u_i = - t_i t_1^{-1} v^*_1 + v^*_i$
+تعریف می‌کنیم. داریم:
+$$u_1(t_1v_1) = (t_1^{-1}v^*_1)(t_1v_1) = t_1^{-1}t_1 = 1$$
+$$ i > 1: u_1(v_i) = (t_1^{-1}v^*_1)(v_i) = t_1^{-1}v^*_1(v_i) = 0$$
+$$ i > 1: u_i(t_1 v_1 + ... + t_n v_n) = 
+(- t_i t_1^{-1} v^*_1 + v^*_i)(t_1 v_1 + ... + t_n v_n)
+$$$$= - t_i t_1^{-1} v^*_1(t_1 v_1 + ... + t_n v_n) + v^*_i(t_1 v_1 + ... + t_n v_n)$$$$
+- t_i t_1^{-1} t_1 + t_i = -t_i + t_i = 0
+$$
+$$
+i, j > 1, j \neq i: u_i(v_j) = (- t_i t_1^{-1} v^*_1 + v^*_i)(v_j) = - t_i t_1^{-1} v^*_1(v_j) + v^*_i(v_j) = - t_i t_1^{-1} 0 + 0 = 0
+$$
+$$ i > 1: u_i(v_i) = (- t_i t_1^{-1} v^*_1 + v^*_i)(v_i) = - t_i t_1^{-1} v^*_1(v_1) + v^*_i(v_i) = 
+- t_i t_1^{-1} 0 + 1 = 1
+$$
+\subsection{
+$\{a_1 v_1 + a_2 v_2, b_1 v_1 + b_2 v_2, v_3, ..., v_n\}$
+}
+اگر یکی از 
+$a_1, a_2, b_1, b_2$
+صفر بود، مسئله به راحتی از طبق بخش‌های قبل حل می‌شود پس فرض می‌کنیم همه‌ی این متغیرها ناصفر اند.
+فرض کنید 
+$u_1 = p v^*_1 + q v^*_2, u_2 = c v^*_1 + dv^*_2$
+است. باید داشته باشیم:
+$$
+u_1(a_1 v_1 + a_2 v_2) = 1, u_1(b_1 v_1 + b_2 v_2) = 0
+$$
+$$
+u_2(a_1 v_1 + a_2 v_2) = 0, u_2(b_1 v_1 + b_2 v_2) = 1
+$$
+با حل این معادله‌ها خواهیم داشت:
+$$
+q = (-a_1b_2b_1^{-1} + a_2)^{-1}, p = -b_2b_1^{-1}q
+$$
+و
+$$
+d = (b_1 a_2a_1^{-1} + b_2)^{-1}, c = a_1^{-1} a_2 d
+$$
+همچنین 
+$-a_1b_2b_1^{-1} + a_2 \neq 0$
+زیرا در غیر اینصورت:
+$$-a_1b_2b_1^{-1} + a_2 = 0 \implies -a_1b_2 + a_2 b_1 = 0 \implies a_1b_2 = a_2b_1$$
+و به طریق مشابه 
+$b_1 a_2a_1^{-1} + b_2 \neq 0$
+پس متغیر‌ها به درستی تعریف می‌شوندو همچنین اگر برای $i > 2$ تعریف کنیم
+$u_i = v^*_i$
+مسئله حل می‌شود.
+\section{تمرین ۴ سری چهارم}
+\subsection{قسمت 7}
+برای اثبات دو لم (که یکی قسمت ۶ سوال است) استفاده می‌کنیم.
+\subsubsection{لم ۱}
+\textbf{
+اگر $f$ تابعکی خطری روی 
+$M_{n\times n}(F)$
+باشد که 
+$\forall A,B \in M_{n\times n}(F): f(AB) = f(BA)$
+آنگاه $f$ مضربی از $tr$ است.
+}
+
+اثبات: $e_{ij}$ را ماتریس استاندارد با خانه‌ی $i, j$ یک در نظر می‌گیریم. تنها کافی است ثابت کنیم
+$f(e_{ii}) = f(e_{jj})$
+و
+$i\neq j: f(e_{ij}) = 0$
+
+می‌دانیم
+$e_{ij} = e_{ik}e_{kj}$
+(به سادگی ضرب را انجام می‌دهیم و نتیجه می‌گیریم.)
+پس:
+$$f(e_{ii}) = f(e_{ij}e_{ji}) = f(e_{ji}e_{ij}) = f(e_{jj})$$
+و همچنین برای $i \neq j$:
+$$
+f(e_{ij}) = f(e_{ii}e_{ij}) = f(e_{ij}e_{ii}) = f(0) = 0
+$$
+پس $f$ مضربی از $tr$ است.
+\subsubsection{لم ۲}
+\textbf{
+اگر $A$ یک ماتریس باشد، ماتریس‌های وارون‌پذیر $X$ و $Y$ وجود دارند که 
+$A = X+Y$
+}
+
+اثبات. حکم معادل این گزاره را برای نگاشت‌ها ثابت می‌کنیم. فرض کنید $T$ یک علمگرخطی روی فضای $n$ بعدی $V$ باشد. 
+$v_1, ..., v_m$
+را پایه‌ای برای $\ker T$ در نظر بگیرید و آن‌ را به پایه‌ای برای $V$ مثل 
+$v_1, ..., v_m, v_{m+1}, ..., v_n$
+گسترش دهید. حال می‌دانیم 
+$T(v_{m+1}), ..., T(v_n)$
+پایه‌ای برای $\im T$ است. فرض کنید این پایه را نیز به پایه برای $V$ مثل
+$$u_1, ..., u_m, u_{m+1} = T(v_{m+1}), ..., u_n = T(v_n)$$
+گسترش می‌دهیم. حال با فرض $2 \neq 0$ نگاشت $S$ را به شکل زیر تعریف می‌کنیم:
+$$\forall 1 \leq i \leq m: S(v_i) = u_i \times 2^{-1},
+\forall m+1 \leq i \leq n: S(v_i) = u_i$$
+و همچنین نگاشت $U$ را تعریف می‌کنیم:
+$$\forall 1 \leq i \leq m: U(v_i) = u_i \times 2^{-1}, \forall m+1 \leq i \leq n: U(v_i) = -u_i$$
+که $S$ و $U$ هردو وارون پذیرند و $S+U = T$ و حکم معادل ثابت و حکم اصلی ثابت شد.
+\subsubsection{مسئله اصلی}
+فرض کنید $A,B$ دو ماتریس دلخواه اند و طبق لم ۲ 
+$B = B_1 + B_2$
+که $B_1, B_2$ ماتریس‌هایی وارون‌پذیر باشند.
+داریم:
+$$f(BA) = f((B_1+B_2)A) = f(B_1A + B_2A) = f(B_1A) + f(B_2 A) $$$$= f(B_1^{-1}B_1AB_1) + f(B_2^{-1}B_2AB_2) = f(AB_1) + f(AB_2) = f(AB_1 + AB_2) $$$$= f(A(B_1+B_2)) = f(AB)$$
+پس حکم لم ۱ برای این مسئله نیز برقرار است و در نتیجه $f$ مضربی از $tr$ است.
+
+\subsection{قسمت ۹}
+تنها کافی‌ست ثابت کنیم هسته‌ی این تابع صفر است. فرض کنید مقدار این تابع روی تابع $A$ صفر شده‌است پس:
+$$
+f_A = 0 \implies \forall X: f_A(X) = 0 \implies tr(AX) = 0
+$$
+حال اگر به جای $X$ ماتریس $e_{ji}$ را قرار دهیم،
+$A e_{ji}$
+ماتریسی است که فقط یک خانه از قطراصلی آن ناصفر است و مقدار آن خانه برابر با $A_{ij}$ است (زیرا می‌توانیم $A$ را به صورت 
+$A = \sum_{i=1}^{n}\sum_{j=1}^{n}A_{ij}e_{ij}$
+بنویسیم و ضرب را انجام دهیم.
+)پس
+$$
+tr(Ae_{ji}) = 0 \implies A_{ij} = 0
+$$
+پس همه‌ی خانه‌های $A$ صفر است پس $A = 0$ پس کرنل این نگاشت خطی ۰ است و چون بعد مبدا و مقصد یکسان است، یک‌به‌یک و پوشاست. 
+\subsection{قسمت ۱۱}
+فرض کنید $A$ ماتریس با ویژگی‌های مسئله باشد.
+اگر $i\neq j$ باشد می‌دانیم $tr(e_{ji}) = 0$ است پس: (استدلالی برای ضرب پایین در قسمت قبل کردیم)
+$$tr(A e_{ji}) = 0 \implies A_{ij} = 0$$
+همچنین برای $i \neq j$ ماتریس 
+$X = e_{ii} - e_{jj}$
+را در نظر بگیرید، 
+$tr(X) = 0$
+است پس داریم:
+$$ tr(A X)= 0 \implies tr(A (e_{ii} - e_{jj})) = 0 \implies tr(A e_{ii}) = tr(Ae_{jj}) \implies A_{ii} = A_{jj}$$
+پس $A$ مضربی از همانی است.
+\end{document} 

@@ -1,0 +1,183 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{multirow}
+\usepackage{rotating}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+%\pagestyle{empty}
+%\usepackage[bottom=0.5in,headheight=0pt,headsep=0pt]{geometry}
+%\addtolength{\topmargin}{0pt}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\im}{Im}
+\usepackage{xepersian}
+\linespread{1.2}
+\settextfont{XB Niloofar}
+\setdigitfont{XB Niloofar}
+
+\begin{document}
+\begin{center}
+	بسمه تعالی
+\end{center}
+
+\begin{center}
+	\textbf{
+		پاسخ سری ششم تمرین‌ها
+		- درس جبرخطی ۱ - دانشگاه صنعتی شریف}
+	\\
+	علیرضا توفیقی محمدی - رشته علوم کامپیوتر - شماره‌ی دانشجویی: ۹۶۱۰۰۳۶۳
+\end{center}
+
+\section{تمرین 6 از بخش پنجم}
+چون مجموعه‌جواب‌های $AX = 0$ و $A'X = 0$ یکی هستند، پس  طبق قضیه‌ی اثبات‌شده در جزوه این دو دستگاه هم‌ارز بوده و ماتریس $A$ هم‌ارز سطری با ماتریس $A'$ است و چون $A$ و $A'$ ماتریس‌های ساده‌سطری هستند طبق تمرین جزوه $A = A'$.
+\section{تمرین ۱۰ از بخش پنجم}
+\subsection{لم}
+\textbf{
+اگر $D_n$ تعداد جایگشت‌های پریش به طول $n$ باشد، برای $n$های زوج $D_n$ فرد است.
+}
+\\
+از درس ریاضیات گسسته می‌دانیم برای $n > 2$:
+$D_n = (n-1)(D_{n-1}+D_{n-2})$.
+حال با استقرا روی $n$ ثابت می‌کنیم $D_n$ برای $n$های فرد، زوج و برای $n$های زوج فرد است.
+\\
+پایه:
+برای $D_1 = 0$ و $D_2 = 1$ و حکم برقرار است.
+\\
+حال فرض کنید حکم برای همه‌ی $n$های کمتر از $k$ برقرار باشد.
+\\
+$D_k$
+را در نظر بگیرید، اگر $k$ زوج بود آن‌گاه $k-1$ فرد و $D_{k-1}$ طبق فرض استقرا زوج و $D_{k-2}$ طبق فرض استقرا فرد است. پس 
+$(k-1)(D_{k-1}+D_{k-2})$
+فرد است پس $D_k$ فرد است.
+\\
+اگر $k$ فرد بود آن‌گاه $k-1$ زوج بوده و $(k-1)(D_{k-1}+D_{k-2})$ نیز زوج خواهد بود و $D_k$ زوج می‌شود.
+\\
+پس گام استقرا نیز ثابت شد و لم ثابت شد.
+\subsection{مسئله‌ی اصلی}
+حال به کمک رابطه‌ی 
+$$\det A = \sum_{\sigma \in S^n} \epsilon_\sigma a_{\sigma(1)1}\dots a_{\sigma(n)n}$$
+سعی بر اثبات حکم می‌کنیم؛ تنها کافی است برای محاسبه‌ی دترمینان، جملات مثبت در سیگمای سمت راست را در نظر بگیریم و چون جملات روی قطر صفر است برای هر $i$ مقدار $a_{ii} = 0$ است. پس اگر برای $i$ ای 
+$\sigma(i) = i$
+شود مقدار 
+$\epsilon_\sigma a_{\sigma(1)1}\dots a_{\sigma(n)n}$
+نیز برابر با ۰ می‌شود و در غیر این‌صورت چون برای $i\neq j$ طبق صورت سوال 
+$a_{ij} = \pm1$
+است و $\epsilon_\sigma = \pm 1$ پس حاصل ضرب آن‌ها نیز مثبت یا منفی یک است.
+پس $\det A$ برابر با جمع $D_n$ تا ($n = 2k$) مثبت یا منفی یک است و اگر فضا را حقیقی یا مختلط در نظر بگیریم چون $n$ زوج است طبق لم $D_n$ فرد است و در نتیجه $\det A$ برابر با جمع تعداد فردی مثبت و منفی یک است و در فضای حقیقی و مختلط جمع تعداد فردی مثبت یا منفی یک نمی‌تواند صفر شود پس $\det A \neq 0$ است و در نتیجه $A$ وارون‌پذیر است.
+
+اما اگر میدان ما $\mathbb{R}$ نباشد، حکم لزوما برقرار نیست، مثلا در 
+$\mathbb{Z}_3$
+
+$\det \begin{bmatrix}
+	0&1&1&1\\
+	1&0&1&1\\
+	1&1&0&1\\
+	1&1&1&0
+\end{bmatrix} = 0$
+است پس
+$\begin{bmatrix}
+0&1&1&1\\
+1&0&1&1\\
+1&1&0&1\\
+1&1&1&0
+\end{bmatrix}$
+ وارون پذیر نیست.
+ 
+\section{تمرین 7 از بخش شش}
+\subsection{}
+$\det X = \det\begin{bmatrix}
+	A&B\\
+	0&D
+	\end{bmatrix} = \det A . \det D$:
+
+برای اثبات از رابطه‌ی جایگشتی دترمینان یعنی 
+$$\det X = \sum_{\sigma \in S^n} \epsilon_\sigma a_{\sigma(1)1}\dots a_{\sigma(n)n}$$
+استفاده می‌کنیم، اندازه‌ی ماتریس $X$ را $n\times n$ در نظر گرفتیم که برای اینکه رابطه معنی داشته باشد باید $n$ زوج باشد مثلا $2k$ باشد و ماتریس‌های $A, B, D$ باید $k\times k$ باشند.
+\\
+از سیگمای بالا تنها باید جملات ناصفر را در نظر بگیریم، پس تنها $\sigma$هایی را در نظر می‌گیریم که برای $i \leq k$ داشته‌باشیم: $\sigma(i) \leq k$ و در نتیجه برای $i > k$ خواهیم داشت $\sigma(i) > k$. پس چنین تابع $\sigma$ را می‌توانیم به با دو تابع $\sigma_1, \sigma_2 \in S^k$ نشان داد بدین صورت که:
+
+$$\sigma(i) = \begin{cases}
+\sigma_1(i)&i \leq k \\
+\sigma_2(i)+k&i > k
+\end{cases}$$
+همچنین چون علامت جایگشت به زوجیت تعداد نابه‌جایی‌های جایگشت ربط دارد و هیچ نابه‌جایی‌ای بین نیمه‌ی چپ و راست وجود ندارد می‌توان گفت
+$\epsilon_\sigma = \epsilon_{\sigma_1} \times \epsilon_{\sigma_2}$.
+حال به بازنویسی عبارت دترمینان برمی‌گردیم:
+$$\det X = \sum_{\sigma \in S^n} \epsilon_\sigma a_{\sigma(1)1}\dots a_{\sigma(n)n}
+$$$$
+ = \sum_{\sigma_1, \sigma_2 \in S^k} \epsilon_{\sigma_1}\epsilon_{\sigma_2} a_{\sigma_1(1) , 1}\dots a_{\sigma_1(k) , k} a_{(k+\sigma_2(1)) , 1}\dots a_{(k+\sigma_2(k)) , k}
+$$
+$$
+= \sum_{\sigma_1 \in S^k} \sum_{\sigma_2 \in S^k} \epsilon_{\sigma_1}\epsilon_{\sigma_2} a_{\sigma_1(1) , 1}\dots a_{\sigma_1(k) , k} a_{(k+\sigma_2(1)) , 1}\dots a_{(k+\sigma_2(k)) , k}
+$$
+$$
+= \sum_{\sigma_1 \in S^k} \epsilon_{\sigma_1} a_{\sigma_1(1) , 1}\dots a_{\sigma_1(k) , k} \sum_{\sigma_2 \in S^k} \epsilon_{\sigma_2} a_{(k+\sigma_2(1)) , 1}\dots a_{(k+\sigma_2(k)) , k}
+$$
+از طرفی 
+$$\det D = \sum_{\sigma_2 \in S^k} \epsilon_{\sigma_2} a_{(k+\sigma_2(1)) , 1}\dots a_{(k+\sigma_2(k)) , k}$$
+و
+$$\det A = \sum_{\sigma_1 \in S^k} \epsilon_{\sigma_1} a_{\sigma_1(1) , 1}\dots a_{\sigma_1(k) , k}$$
+است پس:
+$$
+\det X = \sum_{\sigma_1 \in S^k} \epsilon_{\sigma_1} a_{\sigma_1(1) , 1}\dots a_{\sigma_1(k) , k} \det D = \det D . \det A = \det A . \det D
+$$
+و حکم ثابت شد.
+\subsection{}
+$$
+\det \begin{bmatrix}EA&EB\\C&D\end{bmatrix} =
+ \det E . \det \begin{bmatrix}
+A&B\\C&D
+\end{bmatrix}
+$$
+برای اثبات تنها کافی‌است به دترمینان
+$\begin{bmatrix}E&0\\0&I\end{bmatrix}\times
+\begin{bmatrix}A&B\\C&D\end{bmatrix}$
+نگاه کنیم.
+از طرفی با ضرب بلوکی ماتریس‌ها داریم:
+$$\begin{bmatrix}E&0\\0&I\end{bmatrix}\times
+\begin{bmatrix}A&B\\C&D\end{bmatrix} = \begin{bmatrix}EA&EB\\C&D\end{bmatrix}$$
+و از طرفی طبق قسمت قبل 
+$$\det \begin{bmatrix}E&0\\0&I\end{bmatrix} = \det E . \det I = \det E$$
+پس داریم:
+$$\det \left(\begin{bmatrix}E&0\\0&I\end{bmatrix}\times
+\begin{bmatrix}A&B\\C&D\end{bmatrix}\right) = \det \begin{bmatrix}EA&EB\\C&D\end{bmatrix}$$
+و
+$$\det \left(\begin{bmatrix}E&0\\0&I\end{bmatrix}\times
+\begin{bmatrix}A&B\\C&D\end{bmatrix}\right) = 
+\det \begin{bmatrix}E&0\\0&I\end{bmatrix}\times
+\det \begin{bmatrix}A&B\\C&D\end{bmatrix} = \det E . \det \begin{bmatrix}A&B\\C&D\end{bmatrix} $$
+پس
+$$
+\det \begin{bmatrix}EA&EB\\C&D\end{bmatrix} = \det E . \det \begin{bmatrix}A&B\\C&D\end{bmatrix}
+$$
+و حکم ثابت شد.
+\subsection{}
+$$
+\det \begin{bmatrix}A&B\\C+EA&D+EB\end{bmatrix} = \det \begin{bmatrix}A&B\\C&D\end{bmatrix}
+$$
+مشابه قسمت اول سوال می‌توان نشان داد
+$\det \begin{bmatrix}A&0\\B&D\end{bmatrix} = \det A . \det B$.
+\\
+حال به دترمینان ضرب زیر نگاه می‌کنیم:
+$$\begin{bmatrix}I&0\\E&I\end{bmatrix}\times
+\begin{bmatrix}A&B\\C&D\end{bmatrix}$$
+از طرفی 
+$$\begin{bmatrix}I&0\\E&I\end{bmatrix}\times
+\begin{bmatrix}A&B\\C&D\end{bmatrix} = \begin{bmatrix}A&B\\C+EA&D+EB\end{bmatrix}$$$$ \implies
+\det \left(\begin{bmatrix}I&0\\E&I\end{bmatrix}\times
+\begin{bmatrix}A&B\\C&D\end{bmatrix} \right)= \det \begin{bmatrix}A&B\\C+EA&D+EB\end{bmatrix}
+$$
+و از طرفی
+$$
+\det \left(\begin{bmatrix}I&0\\E&I\end{bmatrix}\times
+\begin{bmatrix}A&B\\C&D\end{bmatrix} \right)=
+\det \begin{bmatrix}I&0\\E&I\end{bmatrix} .
+\det \begin{bmatrix}A&B\\C&D\end{bmatrix}$$$$ = \det I.\det I . \det \begin{bmatrix}A&B\\C&D\end{bmatrix} = 1.\det \begin{bmatrix}A&B\\C&D\end{bmatrix} = \det \begin{bmatrix}A&B\\C&D\end{bmatrix}
+$$
+پس
+$$
+\det \begin{bmatrix}A&B\\C+EA&D+EB\end{bmatrix} = \det \begin{bmatrix}A&B\\C&D\end{bmatrix}
+$$
+و حکم ثابت شد.
+\end{document} 

@@ -1,0 +1,117 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{multirow}
+\usepackage{rotating}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+%\pagestyle{empty}
+%\usepackage[bottom=0.5in,headheight=0pt,headsep=0pt]{geometry}
+%\addtolength{\topmargin}{0pt}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\im}{Im}
+\newcommand{\dori}[1]{{\langle\langle {#1} \rangle\rangle_{T}}}
+\usepackage{xepersian}
+\linespread{1.2}
+\settextfont{XB Niloofar}
+\setdigitfont{XB Niloofar}
+
+\begin{document}
+\begin{center}
+	بسمه تعالی
+\end{center}
+
+\begin{center}
+	\textbf{
+		پاسخ سری هفتم تمرین‌ها
+		- درس جبرخطی ۱ - دانشگاه صنعتی شریف}
+	\\
+	علیرضا توفیقی محمدی - رشته علوم کامپیوتر - شماره‌ی دانشجویی: ۹۶۱۰۰۳۶۳
+\end{center}
+\section{تمرین 19 از بخش هشتم}
+\subsection{7}
+ابتدا ثابت می‌کنیم
+$\ker p(T)$
+زیر فضایی ناوردا از $T$ است. برای اینکار عضو دلخواه $v \in \ker p(T)$ در نظر بگیرید.
+$$
+p(T)(T(v)) = T(p(T)(v)) = T(0) = 0 \implies T(v) \in \ker p(T)
+$$
+و قسمت اول ثابت شد.
+
+حال چون 
+$m_{T_{\ker p(T)}} | m_T$
+پس 
+$m_{T_{\ker p(T)}} = p(x)^k, k \leq b$
+
+چون 
+$T(\ker p(T)) \subseteq \ker p(T)$ 
+پس
+$p(T_{\ker p(T)}) = 0$
+و در نتیجه
+$m_{T_{\ker p(T)}} | p \implies k \leq 1$
+از طرفی $m_{T_{\ker p(T)}}$ نمی‌تواند اسکالر باشد پس $k=1$ و 
+$m_{T_{\ker p(T)}}(x) = p(x)$
+\subsection{8}
+اگر $W_1, ..., W_k$ مستقل خطی باشند،
+$$\forall w_i \in W_i: w_1 + .... + w_k = 0 \implies w_1 = ... = w_k = 0$$
+پس اگر عضو‌های 
+$v_i \in W_i \cap \ker p(T)$
+در نظر بگیریم که
+$v_1 + ... + v_k = 0$
+چون $v_i \in W_i$ است پس
+$v_1 = ... = v_k = 0$
+و در نتیجه 
+$W_1 \cap \ker p(T), ..., W_k \cap \ker p(T)$
+مستقل خطی است.
+
+حال به طرف دیگر قضیه می‌پردازیم، با استقرا روی $k$ تعداد زیرفضاهای $T$-دوری تلاش به اثبات این سمت می‌کنیم.
+
+حکم: اگر $T$ عملگری روی فضای برداری $V$ باشد که $m_T(x) = p(x)^b$ و $p$ یک چندجمله‌ای اول باشد و $W_1, ..., W_k$ زیرفضاهای $T$-دوری در $V$ باشند، آنگاه اگر ‌$W_1 \cap \ker p(T), ..., W_k \cap \ker p(T)$ مستقل خطی باشد نتیجه می‌شود $W_1, ..., W_k$ مستقل خطی است.
+
+پایه: حکم برای $k = 1$ واضخ است زیرا هر زیرفضا به شکل تنها یک مجموعه‌ی مستقل خطی از زیرفضاها را تشکیل می‌دهد.
+
+فرض کنید حکم برای $k = n-1$ برقرار است و قرار می‌دهیم $n=k$، چون $W_i$ ها $T$-دوری اند و $m_T(x) = p(x)^b$ پس $m_{W_i}(x) = p(x)^{q_i}$ است،
+$\max{q_1, ..., q_k} = Q$
+در نظر بگیرید و بدون خدشه به کلیت مسئله فرض کنید $q_1 = Q$ است، چون $p^{q_i}$ چندجمله‌ای مینیمال $W_i$ است پس 
+$p(T)(W_i)^{q_i} = 0, p(T)(W_i)^{q_i-1}\neq 0$
+. حال بردارهای $w_1, ..., w_k$ را در نظر بگیرید که $w_i \in W_i$ و $w_1 + ... + w_k = 0$ باشد.
+
+در این صورت چون $W_i$ $T$-دوری است، 
+$p(T)(W_i)^{Q-1} \subseteq W_i$
+ و چون $p(T)(W_i)^Q = 0$ است پس 
+$\im p(T)(W_i)^{Q-1} \subseteq \ker p(T)$
+پس اگر بردارهای 
+$u_1 = p(T)(w_1)^{Q-1}, ..., u_k = p(T)(w_k)^{Q-1}$
+را در نظر بگیریم داریم $u_1 + ... + u_k = 0$ و در نتیجه $u_1 = ... = u_k = 0$ پس 
+$$u_1 = p(T)(w_1)^{q_1 - 1} = 0 \implies w_1 = 0$$
+پس $w_2 + ... + w_k = 0$ و طبق فرض استقرا $W_2, ..., W_k$ نیز مستقل خطی اند پس 
+$$w_2 = ... = w_k = 0$$
+پس $W_1, ..., W_k$ مستقل خطی اند.
+\subsection{9}
+می‌دانیم 
+$m_{T_\dori{v}}|m_T$
+ پس $a \leq b$ وجود دارد که 
+$m_{T_\dori{v}} = p(x)^a$
+
+و به طریق مشابه 
+$m_{T_\dori{p(T)(v)}} = p(x)^b$
+همچنین در کلاس ثابت شد (و همچنین تمرین ۱ همین قسمت) که بعد یک فضای $T$-دوری برابر با درجه‌ی چند جمله‌ای مینیمال آن است پس داریم:
+$$\dim \dori{v} = a \times \deg p$$
+و
+$$\dim \dori{p(T)(v)} = b \times \deg p$$
+پس تنها کافی‌ست ثابت کنیم
+$$
+b\times \deg p + \deg p = a \times \deg b \iff b+1 = a
+$$
+که این حکم نیز نسبتا واضح است، زیرا 
+$$
+\forall u \in \dori{v}: p^{b+1}(T)(u) = p^b(p(T)(u)) = 0 \implies a \leq b+1
+$$
+$$
+\forall u \in \dori{v}: p^b(T)(u) = p^{b-1}(p(T)(u)) \neq 0 \implies a \geq b+1
+$$
+پس $a = b+1$ و حکم ثابت شد.
+\subsection{10}
+حل نشد :(
+\end{document} 
