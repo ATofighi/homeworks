@@ -1,0 +1,59 @@
+\documentclass[12pt]{article}
+\usepackage{HomeWorkTemplate}
+\usepackage{circuitikz}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage{xepersian}
+\usetikzlibrary{arrows,automata}
+\usetikzlibrary{circuits.logic.US}
+\settextfont{XB Niloofar}
+\newcounter{problemcounter}
+\newcounter{subproblemcounter}
+\linespread{1.2}
+\setcounter{problemcounter}{1}
+\setcounter{subproblemcounter}{1}
+\newcommand{\grade}[1]{\textbf{(#1 نمره)}}
+\newcommand{\problem}[1]
+{
+\section*{
+مسأله‌ی
+\arabic{problemcounter} 
+\stepcounter{problemcounter}
+\setcounter{subproblemcounter}{1}
+#1
+}
+}
+\newcommand{\subproblem}{
+\subsection*{\alph{subproblemcounter})}\stepcounter{subproblemcounter}
+}
+\newcommand{\n}{
+
+\null
+
+}
+\begin{document}
+
+\handout
+{مقدمه‌ای بر رمزنگاری}
+{}
+{دانشجو: علیرضا توفیقی محمدی}
+{سری 1}
+{شماره‌ی دانشجویی: 96100363}
+
+\problem{} % 1
+مسئله را به این شکل حل می‌کنیم که رشته‌ها را دوتا دوتا \lr{XOR} کرده و بایت‌هایی که بیت ۳۲ را دارند یکی از آن‌ها کاراکتر حروف الفبا نیست، بر این اساس جایگاه اسپیس‌ها را حدس زده، سپس از روی جایگاه اسپیس‌ها یک کلید می‌سازیم و مقادیر رمزگشایی را با آن‌ها چاپ می‌کنیم. سپس کلید را جوری تغییر می‌دهیم تا رمزگشایی‌ها منطقی شوند.
+\\
+کد در \lr{1.py} قرار دارد.
+\problem{} % 2
+با توجه به اینکه باید طول بلوک مقسوم علیه‌ای از رمز باشد، حدس می‌زنیم طول بلوک ۷ باشد، سپس با کمک تعداد دوحرفی‌های پرتکرار و اینکه حروف \lr{x} باید آخر رشته باشند، رمز را رمزگشایی می‌کنیم. کد در \lr{2.py} قرار دارد.
+
+\problem{} % 3
+\subproblem{} % 3.1
+سیستم رمز جایگزینی نیست چراکه واریانسِ فرکانس حروف با واریانس فراکنس حروف انگلیسی متفاوت است.
+\subproblem{}
+حدس می‌زنیم سیستم رمز ویژنر باشد، با محاسبه‌ی واریانس فراکناس حروف حرف‌های $i$ام بلوک‌ها حدس می‌زنیم که طول بلوک $5$ باشد، حال با کمک حمله به سیستم سزار رمزگشایی می‌کنیم.
+\\
+کد در \lr{3.py} قرار دارد.
+\problem{} % 4
+\end{document}

@@ -1,0 +1,71 @@
+\documentclass[12pt]{article}
+\usepackage{HomeWorkTemplate}
+\usepackage{circuitikz}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage{xepersian}
+\usetikzlibrary{arrows,automata}
+\usetikzlibrary{circuits.logic.US}
+\settextfont{XB Niloofar}
+\newcounter{problemcounter}
+\newcounter{subproblemcounter}
+\linespread{1.2}
+\setcounter{problemcounter}{1}
+\setcounter{subproblemcounter}{1}
+\newcommand{\grade}[1]{\textbf{(#1 نمره)}}
+\newcommand{\prf}{\lr{PRF}}
+\newcommand{\vrfyk}{\text{Vrfy}_k}
+\newcommand{\mack}{\text{Mac}_k}
+\newcommand{\enck}{\text{Enc}_pk}
+\newcommand{\deck}{\text{Dec}_sk}
+\newcommand{\CR}{\lr{ collision resistant }}
+\newcommand{\problem}[1]
+{
+\section*{
+مسأله‌ی
+\arabic{problemcounter} 
+\stepcounter{problemcounter}
+\setcounter{subproblemcounter}{1}
+#1
+}
+}
+\newcommand{\subproblem}{
+\subsection*{\alph{subproblemcounter})}\stepcounter{subproblemcounter}
+}
+\newcommand{\n}{
+
+\null
+
+}
+\begin{document}
+
+\handout
+{مقدمه‌ای بر رمزنگاری}
+{}
+{دانشجو: علیرضا توفیقی محمدی}
+{سری ۵}
+{شماره‌ی دانشجویی: 96100363}
+
+\problem{} % 1
+
+\problem{} % 2
+کافی است حمله کننده دو متن دلخواه $m_1, m_0$ را به چالشگر بدهد و سپس بعد از دریافت $c$، حرف آخر $c$ را از ۰ به یک تبدیل کرده و $c'$ را ساخته و سپس $\Dec_k(c')$ را پرسده و اگر $m_1$ بود یک و در غیر اینصورت صفر بدهد و با مزیت یک برنده شود.
+\problem{}%3
+\subproblem{} % 1
+$$
+3x + 2 = 19k + 7 \implies 3x = 19k + 5 = 19k' + 24 \implies x = 19k'' + 8
+$$
+\subproblem{} % 2
+$$
+Z*_{35} = 35 \left(1 - \frac{1}{5}\right)\left(1 - \frac{1}{7}\right) = 4 \times 6 = 24
+$$
+\subproblem{} % 3
+$$
+2^{10001} = (2^{10})^1000 \times 2 = 2 \mod 11
+$$
+\subproblem{} % 4
+چراکه $gcd(a, b) = 1$ و یکی از تعاریف ب.م.م این است که: 
+$gcd(a, b) = \min(\{x > 0 | \exists y, z: ay+xz = x\}$.
+
+\end{document}
